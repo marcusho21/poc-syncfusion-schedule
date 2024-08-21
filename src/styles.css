@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@layer syncfusion-base, syncfusion-buttons, syncfusion-calendars, syncfusion-dropdowns, syncfusion-inputs, syncfusion-lists, syncfusion-popups, syncfusion-navigations, syncfusion-angular-schedule, custom-schedule;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+@import "../node_modules/@syncfusion/ej2-base/styles/tailwind.css"
+  layer(syncfusion-base);
+@import "../node_modules/@syncfusion/ej2-buttons/styles/tailwind.css"
+  layer(syncfusion-buttons);
+@import "../node_modules/@syncfusion/ej2-calendars/styles/tailwind.css"
+  layer(syncfusion-calendars);
+@import "../node_modules/@syncfusion/ej2-dropdowns/styles/tailwind.css"
+  layer(syncfusion-dropdowns);
+@import "../node_modules/@syncfusion/ej2-inputs/styles/tailwind.css"
+  layer(syncfusion-inputs);
+@import "../node_modules/@syncfusion/ej2-lists/styles/tailwind.css"
+  layer(syncfusion-lists);
+@import "../node_modules/@syncfusion/ej2-popups/styles/tailwind.css"
+  layer(syncfusion-popups);
+@import "../node_modules/@syncfusion/ej2-navigations/styles/tailwind.css"
+  layer(syncfusion-navigations);
+@import "../node_modules/@syncfusion/ej2-angular-schedule/styles/tailwind.css"
+  layer(syncfusion-angular-schedule);
+
+@layer custom-schedule {
+  ejs-schedule {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+
+    .e-btn,
+    .e-control {
+      font-family: inherit;
+    }
+
+    .e-calendar {
+      width: max-content;
+      max-width: 18rem;
+    }
+  }
+}
