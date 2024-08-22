@@ -2,10 +2,38 @@
 
 <ejs-schedule
   [eventSettings]="eventSettings"
-  [currentView]="currentView"
-  [views]="views"
+  [(currentView)]="currentView"
   height="50dvh"
   width="100%"
   [agendaDaysCount]="30"
-  [selectedDate]="yesterday"
-></ejs-schedule>
+  [(selectedDate)]="yesterday"
+  (actionBegin)="onActionBegin($event)"
+  (actionComplete)="onActionComplete($event)"
+  (actionFailure)="onActionFailure($event)"
+>
+  <ng-template #editorHeaderTemplate>
+    <h1>Is Tyler?</h1>
+  </ng-template>
+  <ng-template #editorTemplate>
+    <form id="add-event"></form>
+  </ng-template>
+  <ng-template #editorFooterTemplate>
+    <div id="right-button">
+      <button id="Save" data-ripple="true">Optional</button>
+    </div>
+  </ng-template>
+
+  <e-views>
+    <e-view option="Agenda" [allowVirtualScrolling]="true">
+      <ng-template #eventTemplate let-data>
+        <div class="template-wrap">
+          <div class="subject">{{ data.Subject }}</div>
+          <div class="time">-</div>
+        </div>
+      </ng-template>
+    </e-view>
+
+    <e-view option="Month"></e-view>
+    <e-view option="Day"></e-view>
+  </e-views>
+</ejs-schedule>
